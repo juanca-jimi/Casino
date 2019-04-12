@@ -10,7 +10,7 @@ width="45%" height="45%">
 __This application originated from a Roulette homework assignment__
 <br/><br/>
 After gaining a deeper understanding of seperations of concerns I realized that this code was monolithic. 
-To help it adapt to future change and maintenance I began making an effort to take it from monolithic to object oriented.
+To help it adapt to future change and maintenance I began making an effort to take it from monolithic to loosely coupled.
 
 <h2>Goals</h2>
 
