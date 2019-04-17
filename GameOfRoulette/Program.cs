@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using static GameOfRoulette.Welcome;
 
 namespace GameOfRoulette
-// The goal is to make an unbreakable&intuitive game of roulette!
+// The goal is to make an unbreakable&intuitive Casino!
 {
-    class Play
+    class Program
     {
         static void Main(string[] args)
         {
@@ -15,8 +12,13 @@ namespace GameOfRoulette
             //Console.BackgroundColor = ConsoleColor.Red;
             //Console.Clear(); // Essentially refreshing the whole console dying it red
             Console.ForegroundColor = ConsoleColor.Red;
-            //Beginning of the game
-            welcome();
+
+            //Beginning of the night!
+            //How much are we taking out of the ATM?
+            YourNightsGamble();
+
+            
+
         }
     }
 }

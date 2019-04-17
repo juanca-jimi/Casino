@@ -1,16 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GameOfRoulette
 {
-    class PlayRoulette
+    public class PlayRoulette
     {
-        private static void typeBet(int bet)
+        public void typeBet(int bet)
         {
-            YourPot yourCase = new YourPot();
+            PlayerPot yourCase = new PlayerPot();
             Console.WriteLine($"\tYou're betting {bet:c}\t\nHow do you wish to play it?\n");
             Console.WriteLine("1. Numbers: the number of the bin\n" +
                                 "2.Evens / Odds: even or odd numbers\n" +
@@ -24,8 +20,8 @@ namespace GameOfRoulette
                                 "10.Corner: at the intersection of any four contiguous numbers, e.g., 1 / 2 / 4 / 5, or 23 / 24 /");
             try
             {
-                yourCase.CurrentTypeBet = Convert.ToInt32(Console.ReadLine());
-                outcome(yourCase.CurrentTypeBet, bet);
+                yourCase.CurrentBet = Convert.ToInt32(Console.ReadLine());
+                outcome(yourCase.CurrentBet, bet);
             }
             catch (Exception)
             {
@@ -35,32 +31,6 @@ namespace GameOfRoulette
                 typeBet(bet);
             }
         }
-        public static void playAgain(bool win, int bet)
-        {
-            if (win)
-            {
-                Console.WriteLine("Do you wish to push your luck? y/n");
-                try
-                {
-                    char play = Convert.ToChar(Console.ReadLine().ToLower());
-                    if (play == 'y')
-                    {
-                        typeBet(bet: bet);
-                    }
-                    else
-                    {
-                        Console.Clear();
-                        Console.WriteLine($"Thanks for playing, you take home {bet:c}");
-                        Console.ReadKey();
-                    }
-                }
-                catch
-                {
-                    Console.Clear();
-                    Console.WriteLine("Please enter \"y\" or \"n\"\n");
-                    playAgain(win, bet);
-                }
-            }
-        }
+        
     }
 }

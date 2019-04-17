@@ -1,30 +1,75 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GameOfRoulette
 {
-    class EnterPlayer
+    public class Welcome
     {
-        public static void welcome()
+        //TODO: handle decimal-money case
+        //TODO: Write unit test
+
+        //This instantiates tonights pot with the PlayerPot Class
+        public static PlayerPot TonightsPot = new PlayerPot();
+
+        public string PlayerName { get; }
+
+        public Welcome(string Name)
         {
-            Console.WriteLine("Welcome to our roulette table\n" +
-                "How much money do you wish to gamble?");
+            PlayerName = Name;
+        }
+
+        public static void YourNightsGamble()
+        {
+
+            Console.WriteLine($"Welcome to our roulette table\n" +
+                "How much money do you wish to gamble tonight?");
             try
             {
-                //This will set the property in the YourPot Class
-                YourPot originalPot = new YourPot();
-                originalPot.Bet = Int32.Parse(Console.ReadLine());
-                typeBet(originalPot.Bet);
+                int AllOurMoney = checked(Int32.Parse(Console.ReadLine()));
+
+                //Greater than zero
+                if (AllOurMoney < 1 )
+                {
+                    throw new ArgumentOutOfRangeException();
+                }
+
+                //If meets our criteria
+                //Save this to our Pot object
+                TonightsPot.TotalBet = AllOurMoney;
+            }
+
+            catch (OverflowException)
+            {
+                Console.Clear();
+
+                //if our checked throws an exception
+                Console.WriteLine("\tThat's too much money! You might take the house down.\n" +
+                    "Please enter a lower number");
+
+                //recursion
+                Welcome();
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                Console.Clear();
+
+                //has to be greater than zero
+                Console.WriteLine("Please enter a positive number");
+
+                //recursion
+                Welcome();
             }
             catch (Exception)
             {
+                Console.Clear();
+
                 //If the user does not give an integer then the method will recursively run
                 Console.WriteLine("Please enter valid number\n");
-                welcome();
+                
+                //recursion
+                Welcome();
             }
+
+            Console.WriteLine($"Great we're play with {TonightsPot.TotalBet:C}!");
         }
     }
 }

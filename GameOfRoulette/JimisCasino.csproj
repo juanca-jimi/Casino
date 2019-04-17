@@ -44,8 +44,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EnterPlayer.cs" />
+    <Compile Include="KeepPlaying.cs" />
     <Compile Include="OutCome.cs" />
-    <Compile Include="Play.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="PlayerPot.cs" />
     <Compile Include="PlayRoulette.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
