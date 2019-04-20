@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28803.156
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JimisCasino", "GameOfRoulette\JimisCasino.csproj", "{70E5402D-3B42-45B2-821B-FC6C0ADF2410}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CasinoUI", "GameOfRoulette\CasinoUI.csproj", "{70E5402D-3B42-45B2-821B-FC6C0ADF2410}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CasinoLibrary", "CasinoLibrary\CasinoLibrary.csproj", "{D987D0F0-31C8-49B6-825B-DA74DFAAE977}"
 EndProject

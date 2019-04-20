@@ -1,9 +1,9 @@
-﻿using CasinoLibrary;
-using System;
+﻿using System;
+using CasinoLibrary;
 
 namespace GameOfRoulette
 {
-    public static class EnterPlayer
+    public class EnterPlayer
     {
         //TODO: Handle case for decimals 
         public static void YourNightsGamble(IPlayerModel playerModel) 
@@ -12,7 +12,8 @@ namespace GameOfRoulette
             Console.WriteLine($"{playerModel.PlayerName}, welcome to our roulette table\n" +
                 "How much money do you wish to gamble tonight?");
 
-            //Grabs our total amount of money!
+            //Grabs our total amount of money from the ATM!
+
             try
             {
                 int AllOurMoney = checked(Int32.Parse(Console.ReadLine()));
@@ -60,7 +61,10 @@ namespace GameOfRoulette
                 YourNightsGamble(playerModel);
             }
 
-            Console.WriteLine($"Great {playerModel.PlayerName}, we've taken {playerModel.TotalMoney:C} out of the ATM!");
+
+            Console.WriteLine($"Great {playerModel.PlayerName}, " +
+                $"we've taken {playerModel.TotalMoney:C} out of the ATM!");
+            Console.ReadKey();
         }
     }
 }

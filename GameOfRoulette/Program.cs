@@ -2,6 +2,9 @@
 using CasinoLibrary;
 using static GameOfRoulette.EnterPlayer;
 using static GameOfRoulette.GenerateGameEx;
+//TODO: Change this from Gameof... to CasinoUI
+//... And not get build errors. 
+//Already tried 
 
 
 namespace GameOfRoulette

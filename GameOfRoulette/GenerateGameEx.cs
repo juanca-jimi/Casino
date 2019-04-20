@@ -1,5 +1,5 @@
-﻿using CasinoLibrary;
-using System;
+﻿using System;
+using CasinoLibrary;
 
 namespace GameOfRoulette
 {
