@@ -4,17 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{70E5402D-3B42-45B2-821B-FC6C0ADF2410}</ProjectGuid>
+    <ProjectGuid>{D987D0F0-31C8-49B6-825B-DA74DFAAE977}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>GameOfRoulette</RootNamespace>
-    <AssemblyName>GameOfRoulette</AssemblyName>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CasinoLibrary</RootNamespace>
+    <AssemblyName>CasinoLibrary</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,13 +24,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -43,19 +45,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EnterPlayer.cs" />
-    <Compile Include="GenerateGameEx.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="LetsGamble.cs" />
+    <Compile Include="IPlayerModel.cs" />
+    <Compile Include="KeepPlaying.cs" />
+    <Compile Include="Logger.cs" />
+    <Compile Include="OutCome.cs" />
+    <Compile Include="PlayerModel.cs" />
+    <Compile Include="PlayRoulette.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CasinoLibrary\CasinoLibrary.csproj">
-      <Project>{d987d0f0-31c8-49b6-825b-da74dfaae977}</Project>
-      <Name>CasinoLibrary</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

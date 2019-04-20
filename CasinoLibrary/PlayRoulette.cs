@@ -6,7 +6,7 @@ namespace GameOfRoulette
     {
         public void typeBet(int bet)
         {
-            PlayerPot yourCase = new PlayerPot();
+
             Console.WriteLine($"\tYou're betting {bet:c}\t\nHow do you wish to play it?\n");
             Console.WriteLine("1. Numbers: the number of the bin\n" +
                                 "2.Evens / Odds: even or odd numbers\n" +

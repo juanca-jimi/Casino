@@ -4,7 +4,7 @@ namespace GameOfRoulette
 {
     public class  OutCome
     {
-        public OutCome(PlayRoulette ThisGame)
+        public OutCome(PlayRoulette ThisRoll)
         {
             int youWin(int howMuch, int bet)
             {

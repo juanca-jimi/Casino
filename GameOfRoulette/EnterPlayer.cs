@@ -1,27 +1,18 @@
-﻿using System;
+﻿using CasinoLibrary;
+using System;
 
 namespace GameOfRoulette
 {
-    public class Welcome
+    public static class EnterPlayer
     {
-        //TODO: handle decimal-money case
-        //TODO: Write unit test
-
-        //This instantiates tonights pot with the PlayerPot Class
-        public static PlayerPot TonightsPot = new PlayerPot();
-
-        public string PlayerName { get; }
-
-        public Welcome(string Name)
-        {
-            PlayerName = Name;
-        }
-
-        public static void YourNightsGamble()
+        //TODO: Handle case for decimals 
+        public static void YourNightsGamble(IPlayerModel playerModel) 
         {
 
-            Console.WriteLine($"Welcome to our roulette table\n" +
+            Console.WriteLine($"{playerModel.PlayerName}, welcome to our roulette table\n" +
                 "How much money do you wish to gamble tonight?");
+
+            //Grabs our total amount of money!
             try
             {
                 int AllOurMoney = checked(Int32.Parse(Console.ReadLine()));
@@ -34,7 +25,7 @@ namespace GameOfRoulette
 
                 //If meets our criteria
                 //Save this to our Pot object
-                TonightsPot.TotalBet = AllOurMoney;
+                playerModel.TotalMoney = AllOurMoney;
             }
 
             catch (OverflowException)
@@ -46,7 +37,7 @@ namespace GameOfRoulette
                     "Please enter a lower number");
 
                 //recursion
-                Welcome();
+                YourNightsGamble(playerModel);
             }
             catch (ArgumentOutOfRangeException)
             {
@@ -56,7 +47,7 @@ namespace GameOfRoulette
                 Console.WriteLine("Please enter a positive number");
 
                 //recursion
-                Welcome();
+                YourNightsGamble(playerModel);
             }
             catch (Exception)
             {
@@ -66,10 +57,10 @@ namespace GameOfRoulette
                 Console.WriteLine("Please enter valid number\n");
                 
                 //recursion
-                Welcome();
+                YourNightsGamble(playerModel);
             }
 
-            Console.WriteLine($"Great we're play with {TonightsPot.TotalBet:C}!");
+            Console.WriteLine($"Great {playerModel.PlayerName}, we've taken {playerModel.TotalMoney:C} out of the ATM!");
         }
     }
 }
