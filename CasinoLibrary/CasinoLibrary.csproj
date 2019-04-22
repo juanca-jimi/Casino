@@ -61,11 +61,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="LetsGamble.cs" />
-    <Compile Include="IPlayerModel.cs" />
+    <Compile Include="IPlayer.cs" />
     <Compile Include="KeepPlaying.cs" />
     <Compile Include="Logger.cs" />
     <Compile Include="OutCome.cs" />
-    <Compile Include="PlayerModel.cs" />
+    <Compile Include="Player.cs" />
     <Compile Include="PlayRoulette.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -6,7 +6,7 @@ namespace GameOfRoulette
     public class EnterPlayer
     {
         //TODO: Handle case for decimals 
-        public static void YourNightsGamble(IPlayerModel playerModel) 
+        public static void YourNightsGamble(IPlayer playerModel) 
         {
 
             Console.WriteLine($"{playerModel.PlayerName}, welcome to our roulette table\n" +
@@ -64,7 +64,19 @@ namespace GameOfRoulette
 
             Console.WriteLine($"Great {playerModel.PlayerName}, " +
                 $"we've taken {playerModel.TotalMoney:C} out of the ATM!");
+
             Console.ReadKey();
+        }
+
+        public static void CasinoColoring()
+        {
+            //The goal is to make an unbreakable & intuitive Casino!
+
+            //Changes colors of the console
+            //Console.BackgroundColor = ConsoleColor.Red;
+            //Console.Clear(); // Essentially refreshing the whole console dying it our chosen color
+
+            Console.ForegroundColor = ConsoleColor.Red;
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CasinoLibrary
 {
-    public class PlayerModel : IPlayerModel
+    public class Player : IPlayer
     {
 
         public string PlayerName { get; set; }

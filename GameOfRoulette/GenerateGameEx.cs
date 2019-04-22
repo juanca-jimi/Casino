@@ -5,11 +5,12 @@ namespace GameOfRoulette
 {
     public static class GenerateGameEx
     {
-        public static IPlayerModel CreatePlayer()
+        //TODO: Inject Dependencies once project is organized into working solution
+        public static IPlayer CreatePlayer()
         {
-            Console.WriteLine("What's your name tonight MoneyBags?");
+            Console.WriteLine("What's your name tonight?");
             String playersName = Console.ReadLine();
-            return new PlayerModel() { PlayerName = playersName}; 
+            return new Player() { PlayerName = playersName}; 
         }
     }
 }

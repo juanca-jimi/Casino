@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CasinoUI", "GameOfRoulette\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CasinoLibrary", "CasinoLibrary\CasinoLibrary.csproj", "{D987D0F0-31C8-49B6-825B-DA74DFAAE977}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Casino.UnitTests", "Casino.UnitTests\Casino.UnitTests.csproj", "{725E5C4D-1EEC-412A-BAC5-359AB58C0956}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{D987D0F0-31C8-49B6-825B-DA74DFAAE977}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D987D0F0-31C8-49B6-825B-DA74DFAAE977}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D987D0F0-31C8-49B6-825B-DA74DFAAE977}.Release|Any CPU.Build.0 = Release|Any CPU
+		{725E5C4D-1EEC-412A-BAC5-359AB58C0956}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{725E5C4D-1EEC-412A-BAC5-359AB58C0956}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{725E5C4D-1EEC-412A-BAC5-359AB58C0956}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{725E5C4D-1EEC-412A-BAC5-359AB58C0956}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

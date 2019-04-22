@@ -6,11 +6,30 @@ using System.Threading.Tasks;
 
 namespace CasinoLibrary
 {
-    class LetsGamble
+    public class LetsGamble
     {
-        public LetsGamble()
+
+        public LetsGamble(IPlayer player)
         {
+            
+        }
+
+        public static void DetermineCurrentBet()
+        {
+            Console.WriteLine("How much our we gambling on this?");
+
+            //Implement Exception Handling
+            try
+            {
+                 = Convert.ToInt32(Console.ReadLine());
+            }
+            catch (Exception)
+            {
+                throw;
+            }
 
         }
+
+
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace CasinoLibrary
 {
-    public interface IPlayerModel
+    public interface IPlayer
     {
         int CurrentBet { get; set; }
         string PlayerName { get; set; }
