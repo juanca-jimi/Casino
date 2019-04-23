@@ -21,6 +21,8 @@ namespace GameOfRoulette
             //How much are we taking out of the ATM?
             YourNightsGamble(CasinoGuest);
 
+
+
         }
 
     }

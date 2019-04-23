@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CasinoLibrary
 {
-    class Logger
+    class Logger : ILogger
     {
         //This class is to log all the events of the nights and spit them out
         //At the end of the night

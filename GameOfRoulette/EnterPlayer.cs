@@ -55,7 +55,7 @@ namespace GameOfRoulette
                 Console.Clear();
 
                 //If the user does not give an integer then the method will recursively run
-                Console.WriteLine("Please enter valid number\n");
+                Console.WriteLine("Please Try Again\n");
                 
                 //recursion
                 YourNightsGamble(playerModel);
@@ -78,5 +78,6 @@ namespace GameOfRoulette
 
             Console.ForegroundColor = ConsoleColor.Red;
         }
+        
     }
 }

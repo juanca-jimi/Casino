@@ -6,13 +6,7 @@ using System.Threading.Tasks;
 
 namespace CasinoLibrary
 {
-    public class LetsGamble
+    interface ILogger
     {
-        public LetsGamble(IPlayer player, IGame game)
-        {
-            
-        }
-
-
     }
 }
