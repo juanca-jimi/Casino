@@ -21,8 +21,18 @@ namespace GameOfRoulette
             //How much are we taking out of the ATM?
             YourNightsGamble(CasinoGuest);
 
+            TheLobby(CasinoGuest);
 
 
+        }
+
+        static void CasinoColoring()
+        {
+            //Changes colors of the console
+            //Console.BackgroundColor = ConsoleColor.Red;
+            //Console.Clear(); // Essentially refreshing the whole console dying it our chosen color
+
+            Console.ForegroundColor = ConsoleColor.Red;
         }
 
     }

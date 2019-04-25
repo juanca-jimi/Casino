@@ -64,11 +64,8 @@
     <Compile Include="Games\Poker.cs" />
     <Compile Include="Interfaces\ILogger.cs" />
     <Compile Include="Interfaces\IGame.cs" />
-    <Compile Include="LetsGamble.cs" />
     <Compile Include="Interfaces\IPlayer.cs" />
-    <Compile Include="KeepPlaying.cs" />
     <Compile Include="Logger.cs" />
-    <Compile Include="OutCome.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Games\Roulette.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

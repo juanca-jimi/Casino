@@ -10,7 +10,17 @@ namespace GameOfRoulette
         {
             Console.WriteLine("What's your name tonight?");
             String playersName = Console.ReadLine();
-            return new Player() { PlayerName = playersName}; 
+            Player guest = new Player() { PlayerName = playersName };
+
+            //Each player comes with their own log of their night
+            //TODO: Dependency Inject this
+            ILogger ThisPlayerLog = CreateNewLog(guest);
+
+            return guest;
+        }
+        public static ILogger CreateNewLog(IPlayer player)
+        {
+            return new Logger(player);
         }
     }
 }

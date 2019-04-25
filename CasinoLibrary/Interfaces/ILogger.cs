@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CasinoLibrary
 {
-    interface ILogger
+    public interface ILogger
     {
     }
 }

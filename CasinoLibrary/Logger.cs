@@ -6,11 +6,16 @@ using System.Threading.Tasks;
 
 namespace CasinoLibrary
 {
-    class Logger : ILogger
+    public class Logger : ILogger
     {
         //This class is to log all the events of the nights and spit them out
         //At the end of the night
 
         //Last of our priorities.
+        public Logger(IPlayer player)
+        {
+            //TODO: implement constructor
+        }
+       
     }
 }

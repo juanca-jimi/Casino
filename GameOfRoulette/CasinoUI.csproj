@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="EnterPlayer.cs" />
     <Compile Include="GenerateGameEx.cs" />
+    <Compile Include="LetsGamble.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

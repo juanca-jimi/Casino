@@ -1,15 +1,19 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
 using CasinoLibrary;
 
 namespace GameOfRoulette
 {
     public class EnterPlayer
     {
+        //Sets the total in the Player class
         //TODO: Handle case for decimals 
-        public static void YourNightsGamble(IPlayer playerModel) 
+        public static void YourNightsGamble(IPlayer player) 
         {
 
-            Console.WriteLine($"{playerModel.PlayerName}, welcome to our roulette table\n" +
+            Console.WriteLine($"{player.PlayerName}, welcome to our roulette table\n" +
                 "How much money do you wish to gamble tonight?");
 
             //Grabs our total amount of money from the ATM!
@@ -26,7 +30,7 @@ namespace GameOfRoulette
 
                 //If meets our criteria
                 //Save this to our Pot object
-                playerModel.TotalMoney = AllOurMoney;
+                player.TotalMoney = AllOurMoney;
             }
 
             catch (OverflowException)
@@ -38,7 +42,7 @@ namespace GameOfRoulette
                     "Please enter a lower number");
 
                 //recursion
-                YourNightsGamble(playerModel);
+                YourNightsGamble(player);
             }
             catch (ArgumentOutOfRangeException)
             {
@@ -48,7 +52,7 @@ namespace GameOfRoulette
                 Console.WriteLine("Please enter a positive number");
 
                 //recursion
-                YourNightsGamble(playerModel);
+                YourNightsGamble(player);
             }
             catch (Exception)
             {
@@ -58,26 +62,62 @@ namespace GameOfRoulette
                 Console.WriteLine("Please Try Again\n");
                 
                 //recursion
-                YourNightsGamble(playerModel);
+                YourNightsGamble(player);
             }
 
 
-            Console.WriteLine($"Great {playerModel.PlayerName}, " +
-                $"we've taken {playerModel.TotalMoney:C} out of the ATM!");
+            Console.WriteLine($"Great {player.PlayerName}, " +
+                $"we've taken {player.TotalMoney:C} out of the ATM!");
 
             Console.ReadKey();
         }
-
-        public static void CasinoColoring()
+        public static void TheLobby(IPlayer player)
         {
-            //The goal is to make an unbreakable & intuitive Casino!
+            Console.WriteLine("We're at the lobby! What game do you want to play?");
 
-            //Changes colors of the console
-            //Console.BackgroundColor = ConsoleColor.Red;
-            //Console.Clear(); // Essentially refreshing the whole console dying it our chosen color
+            var Games = GetImplementationsOf<IGame>();
 
-            Console.ForegroundColor = ConsoleColor.Red;
+            //Displays names of games
+
+            //TODO: Display the names of the games normally and not Camel Case 
+            //Attempts that have failed: Creating a property in the interface
+            //                           Declaring a new MemberInfo in the interface
+
+            foreach (var Game in Games)
+            {
+                Console.WriteLine(Game.Name);
+            }
+
+            //Users input for the game path
+            //TODO: Implement exception handling if path not a valid option
+            string GameOfChoice = Console.ReadLine();
+            
+            //Checks if they selected a valid game
+            foreach (var Game in Games)
+            {
+                if (GameOfChoice.Replace(" ","").ToLower() == Game.Name.Replace(" ", "").ToLower())
+                {
+                    
+                }
+            }
+
         }
-        
+
+
+        //Creates an Enumerable to iterate through all our games and see if 
+        //Got help from stack overflow for this one
+        //https://stackoverflow.com/questions/48716027/iterate-through-implementations-of-an-interface-and-invoke-a-method
+
+        private static IEnumerable<Type> GetImplementationsOf<TInterface>()
+        {
+            var interfaceType = typeof(TInterface);
+            return 
+                AppDomain
+                .CurrentDomain
+                .GetAssemblies()
+                .Select(assembly => assembly.GetTypes().Where(type => !type.IsInterface && interfaceType.IsAssignableFrom(type)))
+                .SelectMany(implementation => implementation);
+
+        }
     }
 }
