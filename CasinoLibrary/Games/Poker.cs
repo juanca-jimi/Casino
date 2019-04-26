@@ -11,6 +11,8 @@ namespace CasinoLibrary.Games
 
         public string DisplayName => "Poker";
 
+        public double WinMultiplier { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
         public void DetermineInitialBet(IPlayer player)
         {
             throw new NotImplementedException();

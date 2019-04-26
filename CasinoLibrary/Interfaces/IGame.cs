@@ -1,17 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CasinoLibrary
+﻿namespace CasinoLibrary
 {
     public interface IGame
     {
         //intended to be displayed to the user when deciding what game to play
         string DisplayName { get; }
 
+        //property win-true
+        bool Win { get; set; }
+
+        //How much did we make?
+        double WinMultiplier { get; set; }
 
         //Betting system
         //When determining initial bet in the game
@@ -23,11 +21,5 @@ namespace CasinoLibrary
 
         //Outcome
         void Outcome(IPlayer player);
-
-
-        //Evaluate win or lose
-        bool Win { get; set; }
-
-       
     }
 }

@@ -1,7 +1,7 @@
 ﻿using System;
 using CasinoLibrary;
 
-namespace GameOfRoulette
+namespace CasinoUI
 {
     public static class GenerateGameEx
     {
@@ -21,6 +21,33 @@ namespace GameOfRoulette
         public static ILogger CreateNewLog(IPlayer player)
         {
             return new Logger(player);
+        }
+        public static IGame CreateNewGame(IGame game)
+        {
+            //TODO: Implement this overload
+
+            //TODO:Change this return
+            return game;
+        }
+        public static IGame CreateNewGame(string GameChoice)
+        {
+            //Allowing me to return my game of choice
+
+            //Initializing it in scope so that we can return it 
+            IGame game;
+
+            try
+            {
+
+                throw new NotSupportedException();
+            }
+            catch (NotSupportedException)
+            {
+
+                
+            }
+
+            return game;
         }
     }
 }

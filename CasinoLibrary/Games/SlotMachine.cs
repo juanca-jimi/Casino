@@ -12,6 +12,7 @@ namespace CasinoLibrary
         public string DisplayName => "Slot Machine";
 
         public bool Win { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public double WinMultiplier { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public void DetermineInitialBet(IPlayer player)
         {

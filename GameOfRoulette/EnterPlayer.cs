@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
 using CasinoLibrary;
 
-namespace GameOfRoulette
+namespace CasinoUI
 {
     public class EnterPlayer
     {
